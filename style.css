@@ -134,6 +134,50 @@ nav ul {
   text-decoration: underline;
 }
 
+/* Card section */
+
+.benefits-head {
+  background: #343c44;
+  padding: 3rem;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.cards {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.card {
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card-icon {
+  background: #343c44;
+  width: 100%;
+}
+
+.card i {
+  font-size: 10rem;
+}
+
 /* media queries */
 
 @media screen and (max-width: 900px) {
