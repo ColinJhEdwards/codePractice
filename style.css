@@ -93,7 +93,9 @@ nav ul {
 
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
-    url(./Images/balloons.jpg);
+    url(./Images/mountain.jpg);
+  background-position: center;
+  background-size: cover;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -108,9 +110,35 @@ nav ul {
   margin: 3rem 0rem;
 }
 
+/* locations section */
+
+#locations {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url(./Images/balloons.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+.locations-head {
+  width: 90%;
+  margin: auto;
+}
+
+.locations-head h2 {
+  padding: 2rem 0rem;
+  text-decoration: underline;
+}
+
 /* media queries */
 
 @media screen and (max-width: 900px) {
+  html {
+    font-size: 45%;
+  }
   nav {
     text-align: center;
   }
