@@ -43,6 +43,20 @@ a {
 a:hover {
   color: rgb(131, 83, 12);
 }
+
+button {
+  padding: 2rem 6rem;
+  background: #055fce;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+button:hover {
+  background: #0a3d7c;
+}
 /* Nav section */
 
 .main-head {
@@ -67,4 +81,21 @@ nav ul {
 
 #logo {
   flex: 3 1 40rem;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url(./Images/balloons.jpg);
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 1px black;
+}
+
+.hero h3 {
+  margin: 3rem 0rem;
 }
