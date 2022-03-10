@@ -57,7 +57,7 @@ form button:hover {
   margin: 0.5rem;
   background: white;
   color: black;
-
+  transition: all ease 0.5s;
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -90,4 +90,9 @@ form button:hover {
 .fa-trash,
 .fa-check {
   pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
