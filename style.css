@@ -85,3 +85,9 @@ form button:hover {
 .todo-item {
   margin: 0 0.5rem;
 }
+
+/* the icon prevents us from clicking the button, this makes it so the icon is no longer clickable */
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
