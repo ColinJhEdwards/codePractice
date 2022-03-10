@@ -37,5 +37,7 @@ function deleteCheck(e) {
   const item = e.target;
   if (item.classList[0] === `trash-btn`) {
     item.parentElement.remove();
+  } else if (item.classList[0] === "complete-btn") {
+    item.parentElement.classList.toggle("completed");
   }
 }
