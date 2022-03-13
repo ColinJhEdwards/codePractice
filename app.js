@@ -38,5 +38,10 @@ function deleteCheck(e) {
   console.log(item);
   if (e.target.classList.contains("completeBtn")) {
     item.classList.toggle("completed");
+  } else if (e.target.classList.contains("deleteBtn")) {
+    item.classList.add("fall");
+    item.addEventListener("transitionend", () => {
+      item.remove();
+    });
   }
 }
