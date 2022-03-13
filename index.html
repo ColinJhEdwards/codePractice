@@ -21,6 +21,26 @@
     <title>Todo</title>
   </head>
   <body>
+    <section class="main">
+      <header>
+        <h2>Colin's Todo List</h2>
+        <form>
+          <input type="text" class="input" required />
+          <button class="submitBtn"><i class="fa-solid fa-plus"></i></button>
+        </form>
+      </header>
+      <div class="todoContainer">
+        <ul class="todoList">
+          <div class="todoItem">
+            <li>Guitar</li>
+            <button class="completeBtn">
+              <i class="fa-solid fa-check"></i>
+            </button>
+            <button class="deleteBtn"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </ul>
+      </div>
+    </section>
     <script src="./app.js"></script>
   </body>
 </html>

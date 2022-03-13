@@ -10,3 +10,78 @@ body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h2 {
+  margin: 5rem;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  font-size: 1.5rem;
+  border: none;
+  padding: 1rem;
+}
+
+.submitBtn {
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  color: purple;
+}
+
+.submitBtn:hover {
+  background: purple;
+  color: white;
+}
+
+.todoContainer {
+  width: 15%;
+}
+
+.todoItem {
+  display: flex;
+  background: white;
+  color: black;
+  list-style: none;
+}
+
+.todoItem li {
+  flex: 1 1 70rem;
+  margin: 0.5rem;
+}
+
+.completeBtn,
+.deleteBtn {
+  flex: 1 1 20rem;
+  border: none;
+  background: green;
+  color: white;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background: red;
+}
