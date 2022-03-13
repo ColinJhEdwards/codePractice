@@ -11,6 +11,10 @@ body {
   min-height: 100vh;
 }
 
+i {
+  pointer-events: none;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -66,6 +70,13 @@ header h2 {
   background: white;
   color: black;
   list-style: none;
+  margin: 1rem 0rem;
+  transition: all ease 0.5s;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .todoItem li {
