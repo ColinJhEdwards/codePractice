@@ -75,5 +75,6 @@ drumKit.pads.forEach((pad) => {
 
 //selected play button in constructor and added event listener to run the start method when clicked
 drumKit.playBtn.addEventListener("click", () => {
+  drumKit.updateBtn();
   drumKit.start();
 });
