@@ -7,6 +7,7 @@ class Drumkit {
     this.hihatAudio = document.querySelector(".hihat-sound");
     this.index = 0;
     this.bpm = 150;
+    this.isPlaying = null;
   }
   activePad() {
     this.classList.toggle("active");
@@ -37,13 +38,29 @@ class Drumkit {
     });
     this.index++;
   }
-  // setInterval(function, milliseconds)
+  // setInterval(function, milliseconds) when play is clicked we run the code in repeat based off the interval
   start() {
     // calculate bpm by dividing bpm variable by 60(seconds) * 1000 to convert to milseconds to fit in setInterval()
     const interval = (60 / this.bpm) * 1000;
-    setInterval(() => {
-      this.repeat();
-    }, interval);
+    // repeat not active? run the code
+    if (!this.isPlaying) {
+      this.isPlaying = setInterval(() => {
+        this.repeat();
+      }, interval);
+    } else {
+      //repeat is active? Clear the interval so it stops
+      clearInterval(this.isPlaying);
+      this.isPlaying = null;
+    }
+  }
+  updateBtn() {
+    if (!this.isPlaying) {
+      this.playBtn.innerText = "Stop";
+      this.playBtn.classList.add("active");
+    } else {
+      this.playBtn.innerText = "Play";
+      this.playBtn.classList.remove("active");
+    }
   }
 }
 
