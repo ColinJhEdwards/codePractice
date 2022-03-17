@@ -10,12 +10,8 @@ let initialColors;
 // function
 
 function generateHex() {
-  const letters = "012345679ABCDEG";
-  let hash = "#";
-  for (let i = 0; i < 6; i++) {
-    hash += letters[Math.floor(Math.random() * 15)];
-  }
-  return hash;
+  const hexColor = chroma.random();
+  return hexColor;
 }
 
 function randomColors() {
