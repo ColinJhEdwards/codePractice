@@ -51,8 +51,8 @@ svg {
   width: 80%;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
-  /* transform: translateY(100px); */
-  /* opacity: 0; */
+  transform: translateY(100px);
+  opacity: 0;
   transition: all 0.5s ease-in-out;
   pointer-events: none;
 }
@@ -109,4 +109,13 @@ svg {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.adjust,
+.lock {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 2rem 0rem;
 }
