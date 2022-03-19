@@ -150,10 +150,10 @@ input[type="range"] {
   justify-content: space-evenly;
   align-items: center;
   border-radius: 2rem;
-  transition: transform 0.5s ease;
-  transform: translateY(-5rem);
+  transition: transform 0.7s ease;
   min-width: 20%;
   min-height: 15vh;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .copy-container.active {
@@ -161,5 +161,5 @@ input[type="range"] {
   pointer-events: all;
 }
 .copy-popup.active {
-  transform: translateY(0rem);
+  transform: scale(1.2);
 }
