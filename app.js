@@ -49,6 +49,12 @@ closeAdjust.forEach((btn) => {
   });
 });
 
+lockBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    changeLock(e);
+  });
+});
+
 // function
 
 function generateHex() {
@@ -63,8 +69,12 @@ function randomColors() {
     const hexText = div.children[0];
     const randomColor = generateHex();
     //  add colors to array
-    initialColors.push(chroma(randomColor).hex());
-    console.log(initialColors);
+    if (div.classList.contains("locked")) {
+      initialColors.push(hexText.innerText);
+      return;
+    } else {
+      initialColors.push(chroma(randomColor).hex());
+    }
     div.style.backgroundColor = randomColor;
     hexText.innerText = randomColor;
     // check for contrast
@@ -184,5 +194,19 @@ function closeAdjustmentPanel() {
   sliderContainers.forEach((slider) => {
     slider.classList.remove("active");
   });
+}
+
+function changeLock(e) {
+  const el = e.target;
+  const colorDiv = e.target.parentElement.parentElement;
+  if (el.classList.contains("active")) {
+    el.innerHTML = `<i class="fa-solid fa-lock-open"></i>`;
+    colorDiv.classList.remove("locked");
+    el.classList.remove("active");
+  } else {
+    el.classList.add("active");
+    colorDiv.classList.add("locked");
+    el.innerHTML = `<i class="fa-solid fa-lock"></i>`;
+  }
 }
 randomColors();
