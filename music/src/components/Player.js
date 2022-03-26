@@ -6,7 +6,6 @@ import {
   faAngleRight,
   faPause,
 } from "@fortawesome/free-solid-svg-icons";
-import { playAudio } from "../util";
 
 const Player = ({
   currentSong,
@@ -19,25 +18,22 @@ const Player = ({
   setCurrentSong,
   setSongs,
 }) => {
-  useEffect(() => {
-    const newSongs = songs.map(
-      (song) => {
-        if (song.id === currentSong.id) {
-          return {
-            ...song,
-            active: true,
-          };
-        } else {
-          return {
-            ...song,
-            active: false,
-          };
-        }
-      },
-      [currentSong]
-    );
-    setSongs(newSongs);
-  });
+  // useEffect(() => {
+  //   const newSongs = songs.map((song) => {
+  //     if (song.id === currentSong.id) {
+  //       return {
+  //         ...song,
+  //         active: true,
+  //       };
+  //     } else {
+  //       return {
+  //         ...song,
+  //         active: false,
+  //       };
+  //     }
+  //   }, []);
+  //   setSongs(newSongs);
+  // });
   const playSongHandler = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -57,10 +53,10 @@ const Player = ({
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
-  const skipTrackHandler = (direction) => {
+  const skipTrackHandler = async (direction) => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (direction === "skip-forward") {
-      setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
     } else {
       if ((currentIndex - 1) % songs.length === -1) {
         setCurrentSong(songs[songs.length - 1]);
@@ -68,7 +64,7 @@ const Player = ({
       }
       setCurrentSong(songs[(currentIndex - 1) % songs.length]);
     }
-    playAudio(isPlaying, audioRef);
+    if (isPlaying) audioRef.current.play();
   };
   return (
     <div className="player">
@@ -81,7 +77,7 @@ const Player = ({
           max={songInfo.duration || 0}
           value={songInfo.currentTime}
         />
-        <p>{getTime(songInfo.duration)}</p>
+        <p>{songInfo.duration ? getTime(songInfo.duration) : "0:00"}</p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon
