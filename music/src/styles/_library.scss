@@ -69,3 +69,8 @@
 .selected {
   background: violet;
 }
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
+}
