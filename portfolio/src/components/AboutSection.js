@@ -3,6 +3,7 @@ import home1 from "../img/home1.png";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { titleAnim, fade } from "../animations";
+import WAve from "./WAve";
 
 const AboutSection = () => {
   return (
@@ -30,6 +31,7 @@ const AboutSection = () => {
       <div className="image">
         <img src={home1} alt="Guy with a camera :)" />
       </div>
+      <WAve />
     </StyledDiv>
   );
 };
@@ -42,6 +44,7 @@ const StyledDiv = styled.div`
   padding: 5rem 10rem;
   color: white;
   .description {
+    z-index: 2;
     flex: 1;
     padding-right: 5rem;
     h2 {
@@ -52,6 +55,7 @@ const StyledDiv = styled.div`
     overflow: hidden;
   }
   .image {
+    z-index: 2;
     flex: 1;
     overflow: hidden;
     img {
