@@ -4,40 +4,20 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const AboutSection = () => {
-  const titleAnimation = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 2 } },
-  };
-  const container = {
-    hidden: { x: 100 },
-    visible: {
-      x: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-        staggerChildren: 0.5,
-      },
-    },
-  };
   return (
     <StyledDiv className="about">
       <div className="description">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          className="title"
-        >
+        <motion.div className="title">
           <div className="hide">
-            <motion.h2 variants={titleAnimation}>We work to make </motion.h2>
+            <motion.h2>We work to make </motion.h2>
           </div>
           <div className="hide">
-            <motion.h2 variants={titleAnimation}>
+            <motion.h2>
               your <span>dreams</span>
             </motion.h2>
           </div>
           <div className="hide">
-            <motion.h2 variants={titleAnimation}>come true</motion.h2>
+            <motion.h2>come true</motion.h2>
           </div>
         </motion.div>
         <p>
