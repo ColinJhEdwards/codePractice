@@ -43,6 +43,7 @@ const StyledDiv = styled.div`
   justify-content: space-between;
   padding: 5rem 10rem;
   color: white;
+
   .description {
     z-index: 2;
     flex: 1;
