@@ -29,6 +29,30 @@ const Home = () => {
           />
         ))}
       </motion.div>
+      <h2>Popular Games</h2>
+      <motion.div className="games">
+        {popular.map((game) => (
+          <Game
+            name={game.name}
+            release={game.released}
+            id={game.id}
+            key={game.id}
+            img={game.background_image}
+          />
+        ))}
+      </motion.div>
+      <h2>New Games</h2>
+      <motion.div className="games">
+        {newGames.map((game) => (
+          <Game
+            name={game.name}
+            release={game.released}
+            id={game.id}
+            key={game.id}
+            img={game.background_image}
+          />
+        ))}
+      </motion.div>
     </GameList>
   );
 };
