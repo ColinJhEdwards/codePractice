@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <GameList>
+      <GameDetail />
       <h2>Upcoming Games</h2>
       <motion.div className="games">
         {upcoming.map((game) => (
