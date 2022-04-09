@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import GameDetail from "../components/GameDetail";
 // dispatch goes into the action loadGames and runs all the axios request and stores the data in the payload
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gamesAction";
