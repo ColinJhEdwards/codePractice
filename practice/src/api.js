@@ -38,3 +38,8 @@ const newGames = `https://api.rawg.io/api/games?dates=${lastYear},${currentDate}
 export const popularGamesURL = () => popular_games;
 export const upcomingGamesURL = () => upcomingGames;
 export const newGamesURL = () => newGames;
+
+// game details
+
+export const gameDetailsURL = (game_id) =>
+  `https://api.rawg.io/api/games/${game_id}`;
