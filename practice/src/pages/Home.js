@@ -6,8 +6,11 @@ import { loadGames } from "../actions/gamesAction";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Game from "../components/Game";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  // get current locaiton
+  const location = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadGames());
@@ -18,7 +21,7 @@ const Home = () => {
 
   return (
     <GameList>
-      <GameDetail />
+      {/* <GameDetail /> */}
       <h2>Upcoming Games</h2>
       <motion.div className="games">
         {upcoming.map((game) => (

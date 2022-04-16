@@ -14,7 +14,7 @@ const GameDetail = () => {
             <p>Rating: {game.rating}</p>
           </div>
           <div className="info">
-            <h3>Playforms</h3>
+            <h3>Platforms</h3>
             <div className="platforms">
               {game.platforms.map((data) => (
                 <h3 key={data.platform.id}>{data.platform.name}</h3>
@@ -25,7 +25,7 @@ const GameDetail = () => {
         <div className="media">
           <img src={game.background_image} alt={game.name} />
         </div>
-        <div className="descripton">
+        <div className="description">
           <p>{game.description_raw}</p>
         </div>
         <div className="gallery">
@@ -58,13 +58,38 @@ const CardShadow = styled(motion.div)`
   .detail {
     width: 80%;
     border-radius: 1rem;
-    padding: 2rem 20rem;
+    padding: 2rem 5rem;
     background: white;
     position: absolute;
     left: 10%;
     color: black;
     img {
       width: 100%;
+    }
+    .stats {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .info {
+        text-align: center;
+        .platforms {
+          display: flex;
+          justify-content: space-evenly;
+          img {
+            margin-left: 3rem;
+          }
+        }
+      }
+    }
+    .media {
+      margin-top: 5rem;
+      img {
+        width: 100%;
+      }
+    }
+    .description {
+      margin: 5rem 0rem;
     }
   }
 `;
